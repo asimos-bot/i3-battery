@@ -25,6 +25,9 @@
 #ifndef NOTIFICATION_INTERVAL
 #define NOTIFICATION_INTERVAL 1
 #endif
+#ifndef NOTIFICATION_TIMEOUT
+#define NOTIFICATION_TIMEOUT 900
+#endif
 
 #define log_err(message)\
     do {\
@@ -81,7 +84,7 @@ int handle_data(const char* status_str, const char* capacity_str, NotifyNotifica
 	    notify_notification_set_urgency(*notification, NOTIFY_URGENCY_LOW);
 	}
 	if(capacity < LOW_THRESHOLD) {
-	    notify_notification_set_timeout(*notification, 5000);
+	    notify_notification_set_timeout(*notification, NOTIFICATION_TIMEOUT * 1000);
 	    if(!notify_notification_show(*notification, NULL)) log_err("couldn't show notification");
 	}
     }

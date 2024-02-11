@@ -17,12 +17,15 @@ SUPER_LOW_THRESHOLD=15
 CRITICAL_THRESHOLD=10
 GOODBYE_THRESHOLD=5
 JOURNAL_SYSTEMD=1
+NOTIFICATION_TIMEOUT=900
 NOTIFICATION_INTERVAL=5
 ```
 
-When `JOURNAL_SYSTEMD` is `0`, the program will use `fprintf` instead.
+* When `JOURNAL_SYSTEMD` is `0`, the program will use `fprintf` instead.
 
-`NOTIFICATION_INTERVAL` is the minimum number of minutes that must pass before a new notification is sent.
+* `NOTIFICATION_INTERVAL` is the minimum number of minutes that must pass before a new notification is sent.
+
+* `NOTIFICATION_TIMEOUT` is the time the notification will stay in the desktop before closing (you can also close it yourself)
 
 When possible, fatal errors will be notified to desktop (don't matter the `JOURNAL_SYSTEMD` value)
 
