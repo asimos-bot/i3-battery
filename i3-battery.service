@@ -3,7 +3,7 @@ Description=Notify on battery status
 
 [Service]
 Type=simple
-ExecStart=~/.config/i3/scripts/i3-battery/i3-battery
+ExecStart=/home/asimos/.config/i3/scripts/i3-battery/i3-battery
 Restart=no
 KillMode=process
 IgnoreSIGPIPE=no
