@@ -1,0 +1,12 @@
+[Unit]
+Description=Notify on battery status
+
+[Service]
+Type=simple
+ExecStart=/home/asimos/Packages/i3-battery/i3-battery
+Restart=no
+KillMode=process
+IgnoreSIGPIPE=no
+
+[Install]
+WantedBy=default.target
