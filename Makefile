@@ -2,7 +2,7 @@
 
 TARGET=i3-battery
 build:
-	clang $$(cat config | awk '{ print "-D" $$1 }' | tr '\n' ' ') `pkg-config --cflags libnotify libudev libsystemd` $(TARGET).c -o $(TARGET) `pkg-config --libs libudev libnotify libsystemd`
+	clang -O3 $$(cat config | awk '{ print "-D" $$1 }' | tr '\n' ' ') `pkg-config --cflags libnotify libudev libsystemd` $(TARGET).c -o $(TARGET) `pkg-config --libs libudev libnotify libsystemd`
 run: build
 	./$(TARGET)
 install: build
